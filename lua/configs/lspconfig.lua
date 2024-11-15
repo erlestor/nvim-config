@@ -53,7 +53,8 @@ lspconfig.volar.setup {
 }
 
 -- servers with default config
-local servers = { "html", "cssls", "eslint", "docker_compose_language_service", "dockerls", "tailwindcss" }
+local servers =
+  { "html", "cssls", "eslint", "docker_compose_language_service", "dockerls", "tailwindcss", "somesass_ls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
