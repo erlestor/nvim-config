@@ -54,3 +54,28 @@ end)
 
 -- open lazygit
 map("n", "<leader>gg", ":LazyGit<CR>")
+
+-- simpler go to start or end of line
+map("n", "H", "0")
+map("n", "L", "$")
+
+-- Smart insert in blank line (auto indent)
+map("n", "i", function()
+  if #vim.fn.getline "." == 0 then
+    return [["_cc]]
+  else
+    return "i"
+  end
+end, { expr = true })
+
+-- better indenting. keep selection after indent so i can spam
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- Resize window using <ctrl> arrow keys
+-- only works temporary. if i say hide a terminal it will reset in size
+-- but to fix that i probably need a plugin
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
