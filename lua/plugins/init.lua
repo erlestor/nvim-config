@@ -57,9 +57,7 @@ return {
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
-  -- don't know if this works if I cant even get an error popup
-  { "dmmulroy/ts-error-translator.nvim" },
-
+  -- doesn't work. if it works these are all defaults and can be deleted
   {
     "catgoose/vue-goto-definition.nvim",
     event = "BufReadPre",
@@ -85,6 +83,64 @@ return {
         override_definition = true, -- override vim.lsp.buf.definition
       },
       debounce = 200,
+    },
+  },
+
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      -- log_level = 'debug',
+    },
+  },
+
+  -- i think this works out of the box so im super confused
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+    -- use opts = {} for passing setup options
+  },
+
+  -- doesnt work rn
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    dependencies = "nvim-treesiter/nvim-treesitter",
+    config = function()
+      require("nvim-ts-autotag").setup {
+        enable_close_on_slash = false,
+      }
+    end,
+  },
+
+  -- only some functions are working :(
+  {
+    "dinhhuy258/git.nvim",
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
 }

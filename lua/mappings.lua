@@ -45,3 +45,12 @@ map("n", "Q", "nop")
 
 -- replace each instance of the word you're on
 map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+
+-- show diagnostics (error) window
+map("n", "gl", function()
+  local bufnr, _ = vim.diagnostic.open_float()
+  vim.api.nvim_buf_set_option(bufnr, "filetype", vim.o.filetype)
+end)
+
+-- open lazygit
+map("n", "<leader>gg", ":LazyGit<CR>")
