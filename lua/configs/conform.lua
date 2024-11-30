@@ -3,8 +3,11 @@ local options = {
     lua = { "stylua" },
     css = { "prettierd" },
     html = { "prettierd" },
-    ts = { "prettierd" },
+    javascript = { "prettierd" },
+    typescript = { "prettierd" },
+    yaml = { "prettierd" },
     vue = { "prettierd" },
+    python = { "black" },
   },
 
   format_on_save = {
