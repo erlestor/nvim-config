@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
   end,
 })
 
+-- desync terminal background when leaving nvim
 vim.api.nvim_create_autocmd("UILeave", {
   callback = function()
     io.write "\027]111\027\\"

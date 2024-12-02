@@ -2,9 +2,12 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettierd" },
+    scss = { "prettierd" },
     html = { "prettierd" },
-    ts = { "prettierd" },
     vue = { "prettierd" },
+    javascript = { "prettierd" },
+    typescript = { "prettierd" },
+    yaml = { "prettierd" },
   },
 
   format_on_save = {

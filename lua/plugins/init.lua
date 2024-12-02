@@ -143,4 +143,12 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
+
+  -- dont think this shit works
+  -- {
+  --   "nmac427/guess-indent.nvim",
+  --   config = function()
+  --     require("guess-indent").setup {}
+  --   end,
+  -- },
 }
