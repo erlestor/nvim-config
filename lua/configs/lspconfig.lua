@@ -61,6 +61,7 @@ local servers = {
   "dockerls",
   "tailwindcss",
   "somesass_ls",
+  "pyright",
 }
 
 for _, lsp in ipairs(servers) do

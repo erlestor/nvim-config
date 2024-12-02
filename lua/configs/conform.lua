@@ -4,10 +4,11 @@ local options = {
     css = { "prettierd" },
     scss = { "prettierd" },
     html = { "prettierd" },
-    vue = { "prettierd" },
     javascript = { "prettierd" },
     typescript = { "prettierd" },
+    vue = { "prettierd" },
     yaml = { "prettierd" },
+    python = { "black" },
   },
 
   format_on_save = {

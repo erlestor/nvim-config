@@ -26,6 +26,7 @@ return {
         "typescript",
         "vue",
         "dockerfile",
+        "python",
       },
     },
   },
@@ -151,4 +152,15 @@ return {
   --     require("guess-indent").setup {}
   --   end,
   -- },
+
+  -- markdown preview
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }
